@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyTTSCMT.Model
 {
-    public partial class FrmNhanVien : Form
+    public partial class FrmXacNhanTraMay : Form
     {
-        public FrmNhanVien()
+        public FrmXacNhanTraMay()
         {
             InitializeComponent();
-        }
-
-        private void FrmNhanVien_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

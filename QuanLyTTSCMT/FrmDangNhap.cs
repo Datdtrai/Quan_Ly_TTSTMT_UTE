@@ -47,6 +47,5 @@ namespace QuanLyTTSCMT
             MessageBox.Show("Sai mật khấu hoặc tên tài khoản","Lỗi");
             this.Close();
         }
-
     }
 }
