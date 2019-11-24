@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_QuanLyTTSCMTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DB_QuanLyTTSCMTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="KhachHangs" EntityType="DB_QuanLyTTSCMTModel.KhachHang" />
+    <EntitySet Name="LapTops" EntityType="DB_QuanLyTTSCMTModel.LapTop" />
+    <EntitySet Name="NhanViens" EntityType="DB_QuanLyTTSCMTModel.NhanVien" />
+    <AssociationSet Name="FK_LapTop_KhachHang" Association="DB_QuanLyTTSCMTModel.FK_LapTop_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="LapTop" EntitySet="LapTops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LapTop_NhanVien" Association="DB_QuanLyTTSCMTModel.FK_LapTop_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="LapTop" EntitySet="LapTops" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MSSV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LapTops" Relationship="DB_QuanLyTTSCMTModel.FK_LapTop_KhachHang" FromRole="KhachHang" ToRole="LapTop" />
+  </EntityType>
+  <EntityType Name="LapTop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenMay" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NgayNhan" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgayGiao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NDSuaChua" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ThanhTien" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDNguoiNhanMay" Type="Int32" Nullable="false" />
+    <Property Name="IDChuMay" Type="Int32" Nullable="false" />
+    <Property Name="GhiChu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KhachHang" Relationship="DB_QuanLyTTSCMTModel.FK_LapTop_KhachHang" FromRole="LapTop" ToRole="KhachHang" />
+    <NavigationProperty Name="NhanVien" Relationship="DB_QuanLyTTSCMTModel.FK_LapTop_NhanVien" FromRole="LapTop" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MSSV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenTaiKhoan" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MKTaiKhoan" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LaQuanLy" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="LapTops" Relationship="DB_QuanLyTTSCMTModel.FK_LapTop_NhanVien" FromRole="NhanVien" ToRole="LapTop" />
+  </EntityType>
+  <Association Name="FK_LapTop_KhachHang">
+    <End Type="DB_QuanLyTTSCMTModel.KhachHang" Role="KhachHang" Multiplicity="1" />
+    <End Type="DB_QuanLyTTSCMTModel.LapTop" Role="LapTop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LapTop">
+        <PropertyRef Name="IDChuMay" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LapTop_NhanVien">
+    <End Type="DB_QuanLyTTSCMTModel.NhanVien" Role="NhanVien" Multiplicity="1" />
+    <End Type="DB_QuanLyTTSCMTModel.LapTop" Role="LapTop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LapTop">
+        <PropertyRef Name="IDNguoiNhanMay" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,16 @@
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\bin\Debug\QuanLyTTSCMT.exe.config
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\bin\Debug\QuanLyTTSCMT.exe
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\bin\Debug\QuanLyTTSCMT.pdb
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.csprojAssemblyReference.cache
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.Properties.Resources.resources
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.csproj.GenerateResource.cache
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.exe
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.pdb
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\bin\Debug\EntityFramework.dll
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\bin\Debug\EntityFramework.xml
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.csproj.CopyComplete
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.FrmDangNhap.resources
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.Model.FrmQuanLy.resources
+C:\Users\DatPT\Desktop\QuanLyTTSCMT\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.Model.FrmNhanVien.resources
