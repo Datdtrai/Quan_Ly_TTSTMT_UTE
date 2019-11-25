@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quan_Ly_TTSCMT.Model
+namespace QuanLyTTSCMT.Model
 {
     public class Nguoi
     {

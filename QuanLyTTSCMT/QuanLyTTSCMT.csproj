@@ -85,7 +85,7 @@
     <Compile Include="Model\LapTop.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\MayTinh.cs" />
+    <Compile Include="Model\LaptopRoot.cs" />
     <Compile Include="Model\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,7 +106,8 @@
     <Compile Include="Model\NhanVien.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\QuanLy.cs" />
+    <Compile Include="Model\NhanVienRoot.cs" />
+    <Compile Include="Model\QuanLyRoot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmDangNhap.resx">

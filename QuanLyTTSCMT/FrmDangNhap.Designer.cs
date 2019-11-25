@@ -95,9 +95,11 @@
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            this.btnDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDangNhap_KeyDown);
             // 
             // FrmDangNhap
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 259);
@@ -116,6 +118,8 @@
             this.Name = "FrmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TRUNG TÂM SỬA CHỮA MÁY TÍNH - UTE";
+            this.Load += new System.EventHandler(this.FrmDangNhap_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmDangNhap_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
