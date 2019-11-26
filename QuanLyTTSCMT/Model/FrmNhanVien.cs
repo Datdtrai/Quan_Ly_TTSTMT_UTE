@@ -12,6 +12,7 @@ namespace QuanLyTTSCMT.Model
 {
     public partial class FrmNhanVien : Form
     {
+        private NhanVienRoot nhanVienRoot;
         public FrmNhanVien()
         {
             InitializeComponent();
@@ -19,7 +20,14 @@ namespace QuanLyTTSCMT.Model
 
         private void FrmNhanVien_Load(object sender, EventArgs e)
         {
-
+            DB_QuanLyTTSCMTEntities newDataBase = new DB_QuanLyTTSCMTEntities();
+            var select = from table in newDataBase.NhanViens select table;
+            foreach (var iteam in select)
+                if (iteam.ID == NguoiSuDung.ID)
+                {
+                    nhanVienRoot = new NhanVienRoot(iteam.Ten, iteam.MSSV, iteam.SDT, iteam.TenTaiKhoan, iteam.MKTaiKhoan);
+                    lblNguoiNhanMay.Text = "Người nhận máy: " + iteam.Ten;
+                }
         }
     }
 }

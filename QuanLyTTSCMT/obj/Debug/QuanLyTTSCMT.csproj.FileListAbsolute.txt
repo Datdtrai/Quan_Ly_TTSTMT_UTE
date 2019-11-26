@@ -47,3 +47,4 @@ C:\Users\DatPT\Desktop\CodeVu_24.11\Quan_Ly_TTSTMT_UTE\QuanLyTTSCMT\obj\Debug\Qu
 C:\Users\DatPT\Desktop\CodeVu_24.11\Quan_Ly_TTSTMT_UTE\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.csproj.CopyComplete
 C:\Users\DatPT\Desktop\CodeVu_24.11\Quan_Ly_TTSTMT_UTE\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.exe
 C:\Users\DatPT\Desktop\CodeVu_24.11\Quan_Ly_TTSTMT_UTE\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.pdb
+E:\Quan_Ly_TTSTMT_UTE\QuanLyTTSCMT\obj\Debug\QuanLyTTSCMT.Model.FrmXacNhanTraMay.resources

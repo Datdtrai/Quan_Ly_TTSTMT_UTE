@@ -24,10 +24,12 @@ namespace QuanLyTTSCMT.Model
         {
             DB_QuanLyTTSCMTEntities newDataBase = new DB_QuanLyTTSCMTEntities();
             var select = from table in newDataBase.NhanViens select table;
-            foreach (var iteam in select)
+            foreach (var iteam in select) // Tại sao phải có thao tác thêm thông tin người dùng vào quanLyRoot?
                 if (iteam.ID == NguoiSuDung.ID)
-                    quanLyRoot = new QuanLyRoot(iteam.Ten, iteam.MSSV,iteam.SDT, iteam.TenTaiKhoan,iteam.MKTaiKhoan);
-
+                {
+                    quanLyRoot = new QuanLyRoot(iteam.Ten, iteam.MSSV, iteam.SDT, iteam.TenTaiKhoan, iteam.MKTaiKhoan);
+                    lblNguoiNhanMay.Text = "Người nhận máy: " + iteam.Ten;
+                }
         }
 
         private void dataThongKe_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -71,6 +73,11 @@ namespace QuanLyTTSCMT.Model
                 else
                     MessageBox.Show("Nhân Viên hoặc Tài Khoản đã tồn tại", "Lỗi");
             }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

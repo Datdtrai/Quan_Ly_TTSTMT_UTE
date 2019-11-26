@@ -30,7 +30,6 @@
         {
             this.tabNhanVien = new System.Windows.Forms.TabControl();
             this.tabNhapDonHang = new System.Windows.Forms.TabPage();
-            this.tabXacNhanTraMay = new System.Windows.Forms.TabPage();
             this.lblIdMay = new System.Windows.Forms.Label();
             this.btnLuu = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -50,7 +49,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timeNgayNhan = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblNhanVien = new System.Windows.Forms.Label();
+            this.lblNguoiNhanMay = new System.Windows.Forms.Label();
+            this.tabXacNhanTraMay = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.cbTraMay = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -95,7 +95,7 @@
             this.tabNhapDonHang.Controls.Add(this.label1);
             this.tabNhapDonHang.Controls.Add(this.timeNgayNhan);
             this.tabNhapDonHang.Controls.Add(this.label5);
-            this.tabNhapDonHang.Controls.Add(this.lblNhanVien);
+            this.tabNhapDonHang.Controls.Add(this.lblNguoiNhanMay);
             this.tabNhapDonHang.Location = new System.Drawing.Point(4, 28);
             this.tabNhapDonHang.Name = "tabNhapDonHang";
             this.tabNhapDonHang.Padding = new System.Windows.Forms.Padding(3);
@@ -103,22 +103,6 @@
             this.tabNhapDonHang.TabIndex = 0;
             this.tabNhapDonHang.Text = "Nhập đơn hàng";
             this.tabNhapDonHang.UseVisualStyleBackColor = true;
-            // 
-            // tabXacNhanTraMay
-            // 
-            this.tabXacNhanTraMay.Controls.Add(this.button1);
-            this.tabXacNhanTraMay.Controls.Add(this.cbTraMay);
-            this.tabXacNhanTraMay.Controls.Add(this.dataGridView1);
-            this.tabXacNhanTraMay.Controls.Add(this.btnTimKiem);
-            this.tabXacNhanTraMay.Controls.Add(this.txtIdMayNhan);
-            this.tabXacNhanTraMay.Controls.Add(this.label10);
-            this.tabXacNhanTraMay.Location = new System.Drawing.Point(4, 28);
-            this.tabXacNhanTraMay.Name = "tabXacNhanTraMay";
-            this.tabXacNhanTraMay.Padding = new System.Windows.Forms.Padding(3);
-            this.tabXacNhanTraMay.Size = new System.Drawing.Size(791, 414);
-            this.tabXacNhanTraMay.TabIndex = 1;
-            this.tabXacNhanTraMay.Text = "Xác nhận trả máy";
-            this.tabXacNhanTraMay.UseVisualStyleBackColor = true;
             // 
             // lblIdMay
             // 
@@ -277,14 +261,30 @@
             this.label5.TabIndex = 30;
             this.label5.Text = "Tên máy:";
             // 
-            // lblNhanVien
+            // lblNguoiNhanMay
             // 
-            this.lblNhanVien.AutoSize = true;
-            this.lblNhanVien.Location = new System.Drawing.Point(355, 9);
-            this.lblNhanVien.Name = "lblNhanVien";
-            this.lblNhanVien.Size = new System.Drawing.Size(125, 19);
-            this.lblNhanVien.TabIndex = 23;
-            this.lblNhanVien.Text = "Người nhận máy:";
+            this.lblNguoiNhanMay.AutoSize = true;
+            this.lblNguoiNhanMay.Location = new System.Drawing.Point(355, 9);
+            this.lblNguoiNhanMay.Name = "lblNguoiNhanMay";
+            this.lblNguoiNhanMay.Size = new System.Drawing.Size(125, 19);
+            this.lblNguoiNhanMay.TabIndex = 23;
+            this.lblNguoiNhanMay.Text = "Người nhận máy:";
+            // 
+            // tabXacNhanTraMay
+            // 
+            this.tabXacNhanTraMay.Controls.Add(this.button1);
+            this.tabXacNhanTraMay.Controls.Add(this.cbTraMay);
+            this.tabXacNhanTraMay.Controls.Add(this.dataGridView1);
+            this.tabXacNhanTraMay.Controls.Add(this.btnTimKiem);
+            this.tabXacNhanTraMay.Controls.Add(this.txtIdMayNhan);
+            this.tabXacNhanTraMay.Controls.Add(this.label10);
+            this.tabXacNhanTraMay.Location = new System.Drawing.Point(4, 28);
+            this.tabXacNhanTraMay.Name = "tabXacNhanTraMay";
+            this.tabXacNhanTraMay.Padding = new System.Windows.Forms.Padding(3);
+            this.tabXacNhanTraMay.Size = new System.Drawing.Size(791, 414);
+            this.tabXacNhanTraMay.TabIndex = 1;
+            this.tabXacNhanTraMay.Text = "Xác nhận trả máy";
+            this.tabXacNhanTraMay.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -385,7 +385,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker timeNgayNhan;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblNhanVien;
+        private System.Windows.Forms.Label lblNguoiNhanMay;
         private System.Windows.Forms.TabPage tabXacNhanTraMay;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox cbTraMay;

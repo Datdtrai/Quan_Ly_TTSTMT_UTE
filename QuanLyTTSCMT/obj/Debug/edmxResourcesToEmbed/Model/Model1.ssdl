@@ -35,16 +35,6 @@
     <Property Name="MKTaiKhoan" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="LaQuanLy" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <Association Name="FK_LapTop_KhachHang">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
     <End Role="LapTop" Type="Self.LapTop" Multiplicity="*" />
@@ -73,7 +63,6 @@
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LapTop" EntityType="Self.LapTop" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_LapTop_KhachHang" Association="Self.FK_LapTop_KhachHang">
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="LapTop" EntitySet="LapTop" />

@@ -16,7 +16,7 @@ namespace QuanLyTTSCMT.Model
         {
             quyenQuanLy = true;
         }
-        public NhanVienRoot(QuanLyRoot root)
+        public NhanVienRoot(QuanLyRoot root) //Cái này dùng cho trường hợp nào?
         {
             quyenQuanLy = true;
             Ten = root.Ten;

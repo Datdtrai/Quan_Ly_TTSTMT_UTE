@@ -4,38 +4,38 @@
     <EntitySetMapping Name="KhachHangs">
       <EntityTypeMapping TypeName="DB_QuanLyTTSCMTModel.KhachHang">
         <MappingFragment StoreEntitySet="KhachHang">
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
-          <ScalarProperty Name="MSSV" ColumnName="MSSV" />
-          <ScalarProperty Name="Ten" ColumnName="Ten" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="MSSV" ColumnName="MSSV" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="LapTops">
       <EntityTypeMapping TypeName="DB_QuanLyTTSCMTModel.LapTop">
         <MappingFragment StoreEntitySet="LapTop">
-          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-          <ScalarProperty Name="IDChuMay" ColumnName="IDChuMay" />
-          <ScalarProperty Name="IDNguoiNhanMay" ColumnName="IDNguoiNhanMay" />
-          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
-          <ScalarProperty Name="NDSuaChua" ColumnName="NDSuaChua" />
-          <ScalarProperty Name="NgayGiao" ColumnName="NgayGiao" />
-          <ScalarProperty Name="NgayNhan" ColumnName="NgayNhan" />
-          <ScalarProperty Name="TenMay" ColumnName="TenMay" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenMay" ColumnName="TenMay" />
+          <ScalarProperty Name="NgayNhan" ColumnName="NgayNhan" />
+          <ScalarProperty Name="NgayGiao" ColumnName="NgayGiao" />
+          <ScalarProperty Name="NDSuaChua" ColumnName="NDSuaChua" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="IDNguoiNhanMay" ColumnName="IDNguoiNhanMay" />
+          <ScalarProperty Name="IDChuMay" ColumnName="IDChuMay" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="NhanViens">
       <EntityTypeMapping TypeName="DB_QuanLyTTSCMTModel.NhanVien">
         <MappingFragment StoreEntitySet="NhanVien">
-          <ScalarProperty Name="LaQuanLy" ColumnName="LaQuanLy" />
-          <ScalarProperty Name="MKTaiKhoan" ColumnName="MKTaiKhoan" />
-          <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
-          <ScalarProperty Name="SDT" ColumnName="SDT" />
-          <ScalarProperty Name="MSSV" ColumnName="MSSV" />
-          <ScalarProperty Name="Ten" ColumnName="Ten" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="MSSV" ColumnName="MSSV" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
+          <ScalarProperty Name="MKTaiKhoan" ColumnName="MKTaiKhoan" />
+          <ScalarProperty Name="LaQuanLy" ColumnName="LaQuanLy" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

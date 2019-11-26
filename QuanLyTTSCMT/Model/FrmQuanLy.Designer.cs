@@ -52,6 +52,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timeNgayNhan = new System.Windows.Forms.DateTimePicker();
+            this.tabXacNhanTraMay = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cbTraMay = new System.Windows.Forms.CheckBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.txtIdMayNhan = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabThemNhanVien = new System.Windows.Forms.TabPage();
             this.txtXNMK = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
@@ -80,20 +87,14 @@
             this.lblTuNgay = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.tabXacNhanTraMay = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cbTraMay = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.txtIdMayNhan = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblNguoiNhanMay = new System.Windows.Forms.Label();
             this.tabQuanLy.SuspendLayout();
             this.tabNhapDonHang.SuspendLayout();
+            this.tabXacNhanTraMay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabThemNhanVien.SuspendLayout();
             this.tabThongKe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataThongKe)).BeginInit();
-            this.tabXacNhanTraMay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTenNguoiSuDung
@@ -137,6 +138,7 @@
             // 
             this.tabNhapDonHang.AllowDrop = true;
             this.tabNhapDonHang.AutoScroll = true;
+            this.tabNhapDonHang.Controls.Add(this.lblNguoiNhanMay);
             this.tabNhapDonHang.Controls.Add(this.lblIdMay);
             this.tabNhapDonHang.Controls.Add(this.btnLuu);
             this.tabNhapDonHang.Controls.Add(this.label9);
@@ -182,6 +184,7 @@
             this.btnLuu.TabIndex = 36;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label9
             // 
@@ -319,8 +322,82 @@
             // 
             this.timeNgayNhan.Location = new System.Drawing.Point(215, 178);
             this.timeNgayNhan.Name = "timeNgayNhan";
-            this.timeNgayNhan.Size = new System.Drawing.Size(327, 22);
+            this.timeNgayNhan.Size = new System.Drawing.Size(266, 22);
             this.timeNgayNhan.TabIndex = 19;
+            // 
+            // tabXacNhanTraMay
+            // 
+            this.tabXacNhanTraMay.Controls.Add(this.button1);
+            this.tabXacNhanTraMay.Controls.Add(this.cbTraMay);
+            this.tabXacNhanTraMay.Controls.Add(this.dataGridView1);
+            this.tabXacNhanTraMay.Controls.Add(this.btnTimKiem);
+            this.tabXacNhanTraMay.Controls.Add(this.txtIdMayNhan);
+            this.tabXacNhanTraMay.Controls.Add(this.label10);
+            this.tabXacNhanTraMay.Location = new System.Drawing.Point(4, 24);
+            this.tabXacNhanTraMay.Name = "tabXacNhanTraMay";
+            this.tabXacNhanTraMay.Size = new System.Drawing.Size(916, 561);
+            this.tabXacNhanTraMay.TabIndex = 4;
+            this.tabXacNhanTraMay.Text = "Xác nhận trả máy";
+            this.tabXacNhanTraMay.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(452, 236);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(58, 28);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Lưu";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // cbTraMay
+            // 
+            this.cbTraMay.AutoSize = true;
+            this.cbTraMay.Location = new System.Drawing.Point(36, 245);
+            this.cbTraMay.Margin = new System.Windows.Forms.Padding(2);
+            this.cbTraMay.Name = "cbTraMay";
+            this.cbTraMay.Size = new System.Drawing.Size(136, 19);
+            this.cbTraMay.TabIndex = 11;
+            this.cbTraMay.Text = "Xác nhận đã trả máy";
+            this.cbTraMay.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(36, 85);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(373, 112);
+            this.dataGridView1.TabIndex = 10;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(423, 39);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(87, 18);
+            this.btnTimKiem.TabIndex = 9;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            // 
+            // txtIdMayNhan
+            // 
+            this.txtIdMayNhan.Location = new System.Drawing.Point(147, 37);
+            this.txtIdMayNhan.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdMayNhan.Name = "txtIdMayNhan";
+            this.txtIdMayNhan.Size = new System.Drawing.Size(174, 22);
+            this.txtIdMayNhan.TabIndex = 8;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(32, 42);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 15);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Nhập Id máy:";
             // 
             // tabThemNhanVien
             // 
@@ -583,79 +660,14 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(294, 29);
             this.dateTimePicker1.TabIndex = 4;
             // 
-            // tabXacNhanTraMay
+            // lblNguoiNhanMay
             // 
-            this.tabXacNhanTraMay.Controls.Add(this.button1);
-            this.tabXacNhanTraMay.Controls.Add(this.cbTraMay);
-            this.tabXacNhanTraMay.Controls.Add(this.dataGridView1);
-            this.tabXacNhanTraMay.Controls.Add(this.btnTimKiem);
-            this.tabXacNhanTraMay.Controls.Add(this.txtIdMayNhan);
-            this.tabXacNhanTraMay.Controls.Add(this.label10);
-            this.tabXacNhanTraMay.Location = new System.Drawing.Point(4, 24);
-            this.tabXacNhanTraMay.Name = "tabXacNhanTraMay";
-            this.tabXacNhanTraMay.Size = new System.Drawing.Size(916, 561);
-            this.tabXacNhanTraMay.TabIndex = 4;
-            this.tabXacNhanTraMay.Text = "Xác nhận trả máy";
-            this.tabXacNhanTraMay.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(452, 236);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 18);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Lưu";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // cbTraMay
-            // 
-            this.cbTraMay.AutoSize = true;
-            this.cbTraMay.Location = new System.Drawing.Point(36, 245);
-            this.cbTraMay.Margin = new System.Windows.Forms.Padding(2);
-            this.cbTraMay.Name = "cbTraMay";
-            this.cbTraMay.Size = new System.Drawing.Size(136, 19);
-            this.cbTraMay.TabIndex = 11;
-            this.cbTraMay.Text = "Xác nhận đã trả máy";
-            this.cbTraMay.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 85);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(373, 112);
-            this.dataGridView1.TabIndex = 10;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(423, 39);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(87, 18);
-            this.btnTimKiem.TabIndex = 9;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            // 
-            // txtIdMayNhan
-            // 
-            this.txtIdMayNhan.Location = new System.Drawing.Point(147, 37);
-            this.txtIdMayNhan.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIdMayNhan.Name = "txtIdMayNhan";
-            this.txtIdMayNhan.Size = new System.Drawing.Size(174, 22);
-            this.txtIdMayNhan.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(32, 42);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 15);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Nhập Id máy:";
+            this.lblNguoiNhanMay.AutoSize = true;
+            this.lblNguoiNhanMay.Location = new System.Drawing.Point(552, 25);
+            this.lblNguoiNhanMay.Name = "lblNguoiNhanMay";
+            this.lblNguoiNhanMay.Size = new System.Drawing.Size(101, 15);
+            this.lblNguoiNhanMay.TabIndex = 38;
+            this.lblNguoiNhanMay.Text = "Người nhận máy:";
             // 
             // FrmQuanLy
             // 
@@ -678,14 +690,14 @@
             this.tabQuanLy.ResumeLayout(false);
             this.tabNhapDonHang.ResumeLayout(false);
             this.tabNhapDonHang.PerformLayout();
+            this.tabXacNhanTraMay.ResumeLayout(false);
+            this.tabXacNhanTraMay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabThemNhanVien.ResumeLayout(false);
             this.tabThemNhanVien.PerformLayout();
             this.tabThongKe.ResumeLayout(false);
             this.tabThongKe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataThongKe)).EndInit();
-            this.tabXacNhanTraMay.ResumeLayout(false);
-            this.tabXacNhanTraMay.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -751,5 +763,6 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtIdMayNhan;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblNguoiNhanMay;
     }
 }

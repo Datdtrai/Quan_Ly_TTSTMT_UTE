@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dfc7dcc99af1412b8dc2e9f1addef8b8" Name="Diagram1">
-        <EntityTypeShape EntityType="DB_QuanLyTTSCMTModel.KhachHang" Width="1.5" PointX="0.75" PointY="1.5" />
-        <EntityTypeShape EntityType="DB_QuanLyTTSCMTModel.LapTop" Width="1.5" PointX="8" PointY="0.875" />
-        <EntityTypeShape EntityType="DB_QuanLyTTSCMTModel.NhanVien" Width="1.5" PointX="4.5" PointY="1.25" />
-        <AssociationConnector Association="DB_QuanLyTTSCMTModel.FK_LapTop_KhachHang" />
-        <AssociationConnector Association="DB_QuanLyTTSCMTModel.FK_LapTop_NhanVien" />
+      <Diagram DiagramId="0af53645b31c4bb18447ebbc80f5ff3b" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_QuanLyTTSCMTModel.KhachHang" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QuanLyTTSCMTModel.LapTop" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_QuanLyTTSCMTModel.NhanVien" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="DB_QuanLyTTSCMTModel.FK_LapTop_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_QuanLyTTSCMTModel.FK_LapTop_NhanVien" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
