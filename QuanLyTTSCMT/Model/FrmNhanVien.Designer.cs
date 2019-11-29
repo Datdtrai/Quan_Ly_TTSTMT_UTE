@@ -57,6 +57,7 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtIdMayNhan = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.lblIDMayValues = new System.Windows.Forms.Label();
             this.tabNhanVien.SuspendLayout();
             this.tabNhapDonHang.SuspendLayout();
             this.tabXacNhanTraMay.SuspendLayout();
@@ -76,6 +77,7 @@
             // tabNhapDonHang
             // 
             this.tabNhapDonHang.AutoScroll = true;
+            this.tabNhapDonHang.Controls.Add(this.lblIDMayValues);
             this.tabNhapDonHang.Controls.Add(this.lblIdMay);
             this.tabNhapDonHang.Controls.Add(this.btnLuu);
             this.tabNhapDonHang.Controls.Add(this.label9);
@@ -121,6 +123,7 @@
             this.btnLuu.TabIndex = 42;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label9
             // 
@@ -339,6 +342,15 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "Nhập Id máy:";
             // 
+            // lblIDMayValues
+            // 
+            this.lblIDMayValues.AutoSize = true;
+            this.lblIDMayValues.Location = new System.Drawing.Point(79, 687);
+            this.lblIDMayValues.Name = "lblIDMayValues";
+            this.lblIDMayValues.Size = new System.Drawing.Size(56, 19);
+            this.lblIDMayValues.TabIndex = 44;
+            this.lblIDMayValues.Text = "label11";
+            // 
             // FrmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -393,5 +405,6 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtIdMayNhan;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblIDMayValues;
     }
 }

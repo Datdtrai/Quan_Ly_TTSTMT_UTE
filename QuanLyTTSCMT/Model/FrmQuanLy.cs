@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using QuanLyTTSCMT.Model;
 namespace QuanLyTTSCMT.Model
 {
-    
+
     public partial class FrmQuanLy : Form
     {
 
@@ -19,9 +19,31 @@ namespace QuanLyTTSCMT.Model
         {
             InitializeComponent();
         }
-
+        public bool kiemTraSDT(string sdt)
+        {
+            if (sdt[0] != '0')
+                return false;
+            bool kt = true;
+            for (int i = 0; i < sdt.Length; i++)
+            {
+                if (!char.IsDigit(sdt[i]))
+                    return false;
+            }
+            return kt;
+        }
+        public bool kiemTraTien(string sdt)
+        {
+            bool kt = true;
+            for (int i = 0; i < sdt.Length; i++)
+            {
+                if (!char.IsDigit(sdt[i]))
+                    return false;
+            }
+            return kt;
+        }
         private void FrmQuanLy_Load(object sender, EventArgs e)
         {
+
             DB_QuanLyTTSCMTEntities newDataBase = new DB_QuanLyTTSCMTEntities();
             var select = from table in newDataBase.NhanViens select table;
             foreach (var iteam in select) // Tại sao phải có thao tác thêm thông tin người dùng vào quanLyRoot?
@@ -40,14 +62,14 @@ namespace QuanLyTTSCMT.Model
         private void btnThemNhanVien_Click(object sender, EventArgs e)
         {
 
-            if (txtTenNhanVien.Text == "" || txtMSSVNV.Text == "" || txtSDTNV.Text == "" || txtTenTaiKhoan.Text == "" || txtMatKhau.Text == "")
+            if (txtTenNhanVien.Text.Trim() == "" || txtMSSVNV.Text.Trim() == "" || txtSDTNV.Text.Trim() == "" || txtTenTaiKhoan.Text.Trim() == "" || txtMatKhau.Text.Trim() == "")
                 MessageBox.Show("Bạn phải điền hết thông tin chúng tôi yêu cầu", "Lỗi");
-            else if (txtMatKhau.Text != txtXNMK.Text)
+            else if (txtMatKhau.Text.Trim() != txtXNMK.Text.Trim())
             {
                 txtXNMK.Text = "";
                 MessageBox.Show("Mời bạn xác nhận lại mật khẩu");
             }
-            else if (!quanLyRoot.kiemTraSDT(txtSDTNV.Text)||txtSDTNV.TextLength!=10)
+            else if (!quanLyRoot.kiemTraSDT(txtSDTNV.Text.Trim()) || txtSDTNV.TextLength != 10)
             {
                 MessageBox.Show("Số điện thoại không hợp lệ", "Lỗi");
             }
@@ -76,6 +98,164 @@ namespace QuanLyTTSCMT.Model
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
+        {
+            bool check = true;
+            if (txtTenKhachHang.Text.Trim() == "" || txtMSSV.Text.Trim() == "" || txtSDT.Text.Trim() == "null" || txtTenMay.Text.Trim() == "" || rtbNDSuaChua.Text.Trim() == "" || rtbGhiChu.Text.Trim() == "" || txtThanhTien.Text.Trim() == "")
+                MessageBox.Show("Bạn phải điền hết thông tin chúng tôi yêu cầu", "Lỗi");
+            else if (!kiemTraSDT(txtSDT.Text.Trim()))
+                MessageBox.Show("Số điện thoại không hợp lệ", "Lỗi");
+            else if (!kiemTraTien(txtThanhTien.Text.Trim()))
+                MessageBox.Show("Số tiền không hợp lệ", "Lỗi");
+            else
+            {
+                DB_QuanLyTTSCMTEntities data = new DB_QuanLyTTSCMTEntities();
+                var duLieuKhachHang = from table in data.KhachHangs select table;
+                foreach (var iteam in duLieuKhachHang)
+                {
+                    if (iteam.MSSV == txtMSSV.Text)
+                    {
+                        var duLieuKhachHang1 = from table in data.LapTops select table;
+                        foreach (var iteam1 in duLieuKhachHang1)
+                        {
+                            if (iteam1.TenMay == txtTenMay.Text.Trim() && iteam1.NgayNhan == iteam1.NgayGiao)
+                            {
+                                check = false;
+                                MessageBox.Show("Đơn này đã tồn tại", "Lỗi");
+                                break;
+                            }
+                        }
+                        if (check == false)
+                            break;
+                    }
+                }
+                if (check)
+                {
+                    int idMay = 0;
+                    Nguoi khachHang = new Nguoi(txtTenKhachHang.Text.Trim(), txtMSSV.Text.Trim(), txtSDT.Text.Trim(), null, null);
+                    LaptopRoot mayTinh = new LaptopRoot(txtTenNhanVien.Text.Trim(), txtTenMay.Text.Trim(), txtTenKhachHang.Text.Trim(), timeNgayNhan.Value, new DateTime(), rtbNDSuaChua.Text.Trim(), rtbGhiChu.Text.Trim(), txtThanhTien.Text.Trim());
+                    quanLyRoot.NhapDonHang(khachHang, mayTinh, ref idMay);
+                    lblIDMayValue.Text = idMay.ToString();
+                    MessageBox.Show("Thêm đơn hàng thành công");
+                }
+            }
+
+        }
+
+        private void tabXacNhanTraMay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            btnLuu.Show();
+            cbTraMay.Show();
+            if (txtIdMayNhan.Text.Trim() == "")
+                MessageBox.Show("Bạn hãy nhập ID Máy cần tìm", "Lỗi");
+            else
+            {
+                bool check = true;
+                DB_QuanLyTTSCMTEntities data = new DB_QuanLyTTSCMTEntities();
+                var duLieuKhachHang = from table in data.LapTops select table;
+                foreach (var iteam in duLieuKhachHang)
+                {
+                    if (iteam.ID.ToString() == txtIdMayNhan.Text.Trim())
+                        if (iteam.NgayNhan == iteam.NgayGiao)
+                        {
+                            int i = 0;
+                            dgvThongTinDonHang.Rows[0].Cells[i++].Value = iteam.TenMay;
+                            dgvThongTinDonHang.Rows[0].Cells[i++].Value = iteam.NDSuaChua;
+                            dgvThongTinDonHang.Rows[0].Cells[i++].Value = iteam.GhiChu;
+                            dgvThongTinDonHang.Rows[0].Cells[i++].Value = iteam.ThanhTien;
+                            check = false;
+                            break;
+                        }
+                        else
+                        {
+                            int i = 0;
+                            dgvThongTinDonHang.Rows[0].Cells[i++].Value = iteam.TenMay;
+                            dgvThongTinDonHang.Rows[0].Cells[i++].Value = iteam.NDSuaChua;
+                            dgvThongTinDonHang.Rows[0].Cells[i++].Value = iteam.GhiChu;
+                            dgvThongTinDonHang.Rows[0].Cells[i++].Value = iteam.ThanhTien;
+
+                            MessageBox.Show("Đơn hàng của bạn đã được giao vào lúc " + iteam.NgayGiao.ToString());
+                            check = false;
+                            break;
+                        }
+                }
+                if (check)
+                {
+                    int j = 0;
+                    dgvThongTinDonHang.Rows[0].Cells[j++].Value = "";
+                    dgvThongTinDonHang.Rows[0].Cells[j++].Value = "";
+                    dgvThongTinDonHang.Rows[0].Cells[j++].Value = "";
+                    dgvThongTinDonHang.Rows[0].Cells[j++].Value = "";
+                    MessageBox.Show("Không có đơn hàng nào ứng với ID = " + txtIdMayNhan.Text.Trim(), "Lỗi");
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cbTraMay.Checked)
+            {
+                DateTime datetime = DateTime.Now;
+                DB_QuanLyTTSCMTEntities data = new DB_QuanLyTTSCMTEntities();
+                var duLieuKhachHang = from table in data.LapTops select table;
+                foreach (var iteam in duLieuKhachHang)
+                {
+
+                    if (iteam.ID.ToString() == txtIdMayNhan.Text.Trim())
+                        if (iteam.NgayNhan == iteam.NgayGiao)
+                        {
+                            iteam.NgayGiao = datetime;
+                            break;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Máy này đã được giao, không thể giao lại");
+                        }
+                }
+                data.SaveChanges();
+                cbTraMay.Checked = false;
+                MessageBox.Show("Lưu thành công");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach(var iteam in dataThongKe.Rows)
+            {
+                dataThongKe.Rows.Clear();
+            }
+            DB_QuanLyTTSCMTEntities data = new DB_QuanLyTTSCMTEntities();
+            var duLieuKhachHang = from table in data.LapTops select table;
+            int i = 0;
+            Double tongTien = 0;
+            foreach (var iteam in duLieuKhachHang)
+            {
+                int j = 0;
+                if (iteam.NgayGiao.Date >= timeTuNgay.Value.Date && iteam.NgayGiao.Date <= timeDenNgay.Value.Date )
+                {
+                    dataThongKe.Rows.Add();
+                    dataThongKe.Rows[i].Cells[j++].Value = iteam.ID;
+                    dataThongKe.Rows[i].Cells[j++].Value = iteam.TenMay;
+                    dataThongKe.Rows[i].Cells[j++].Value = iteam.NgayNhan;
+                    dataThongKe.Rows[i].Cells[j++].Value = iteam.NgayGiao;
+                    dataThongKe.Rows[i].Cells[j++].Value = iteam.IDChuMay;
+                    dataThongKe.Rows[i].Cells[j++].Value = iteam.IDNguoiNhanMay;
+                    dataThongKe.Rows[i].Cells[j++].Value = iteam.ThanhTien;
+                    if (iteam.NgayNhan != iteam.NgayGiao)
+                        dataThongKe.Rows[i++].Cells[j++].Value = "Đã Giao";
+                    else
+                        dataThongKe.Rows[i++].Cells[j++].Value = "Đang Sửa";
+                    tongTien += Convert.ToDouble(iteam.ThanhTien);
+                }
+            }
+            lblTongTienValues.Text = tongTien.ToString()+ " VND";
+        }
+
+        private void lblTongTienValues_Click(object sender, EventArgs e)
         {
 
         }

@@ -29,5 +29,10 @@ namespace QuanLyTTSCMT.Model
                     lblNguoiNhanMay.Text = "Người nhận máy: " + iteam.Ten;
                 }
         }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
